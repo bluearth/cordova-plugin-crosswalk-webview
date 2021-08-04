@@ -168,7 +168,6 @@ cdvPluginPostBuildExtras.add({
     android.applicationVariants.all { variant ->
         def variantName = variant.name.capitalize()
         def mergeTask = tasks["merge${variantName}Assets"]
-		def mergeTask = tasks.named("merge${variantName}Assets")
         def processTask = tasks["process${variantName}Resources"]
         def outFile = new File (mergeTask.outputDir.get().asFile, "xwalk-command-line")
         def newTask = project.task("createXwalkCommandLineFile${variantName}")
